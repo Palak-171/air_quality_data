@@ -1,5 +1,6 @@
 #app.py
-from flask import Flask,request, url_for, redirect, render_template
+from flask import Flask,request, url_for, redirect, render_template, flash
+from flask_sqlalchemy import SQLAlchemy 
 import pickle
 import numpy as np
 
@@ -10,7 +11,7 @@ model=pickle.load(open('DTmodel.pkl','rb'))
 def home():
     return render_template("index.html")
 
-@app.route('/predict',methods=['POST','GET'])
+@app.route('/predict',methods=['POST'])
 def predict():
     # receive the values send by user in three text boxes thru request object -> requesst.form.values()
     
