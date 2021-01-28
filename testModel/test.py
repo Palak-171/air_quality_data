@@ -1,5 +1,6 @@
 #using the model saved from hard disk 
 import pickle 
+from sklearn import tree
 # load the model from disk
 filename = 'DTModel.pkl'
 loaded_model = pickle.load(open(filename, 'rb'))
